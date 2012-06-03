@@ -9,7 +9,7 @@ public class TestSearchTree {
 	public static void main(String[] args) {
 		IComparator integerComparator = new IntegerComparator();
 
-		SearchTree avlTree = new SearchTree(integerComparator);
+		SearchTree searchTree = new SearchTree(integerComparator);
 
 		final int MAX = 20000;
 
@@ -18,8 +18,8 @@ public class TestSearchTree {
 			System.out.println("+++++++++++++++++++++++++");
 			int n = rand.nextInt(100000);
 			System.out.println("Inserting number " + i + ": " + n);
-			avlTree.insert(n);
-			System.out.println("Height: " + avlTree.height());
+			searchTree.insert(n);
+			System.out.println("Height: " + searchTree.height());
 		}
 
 		System.out.println();

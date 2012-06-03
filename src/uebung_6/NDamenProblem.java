@@ -1,6 +1,8 @@
 package uebung_6;
 
 public class NDamenProblem {
+    static int s = 0;
+    
     static void printChessboard(boolean[][] array, int spalte, int zeile) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
@@ -73,32 +75,34 @@ public class NDamenProblem {
         
         if (zeile < array.length) {
             for (int spalte = 0; spalte < array.length && !solved; spalte++) {
-                System.out.println("Versuche Dame auf Zeile: " + (zeile + 1) + ", Spalte: " + (spalte + 1) + " ...");
-                printChessboard(array, spalte, zeile);
+//                System.out.println("Versuche Dame auf Zeile: " + (zeile + 1) + ", Spalte: " + (spalte + 1) + " ...");
+//                printChessboard(array, spalte, zeile);
                 if (checkPosition(array, spalte, zeile)) {
-                    System.out.println("... OK");
+//                    System.out.println("... OK");
                     array[spalte][zeile] = true;
                     solved = setzeDame(array, zeile + 1);
                     if (!solved) {
                         array[spalte][zeile] = false;
                     }
                 } else {
-                    System.out.println("... not OK");
+//                    System.out.println("... not OK");
                 }
             }
             if (!solved) {
-                System.out.println("Zeile " + (zeile + 1) + ": Platzierung Dame nicht möglich: Keine weitere Teillösungsvariante verfügbar!");
+//                System.out.println("Zeile " + (zeile + 1) + ": Platzierung Dame nicht möglich: Keine weitere Teillösungsvariante verfügbar!");
             } else {
-                System.out.println("Zeile " + (zeile + 1) + ": Platzierung Dame möglich: Gültige Teillösung gefunden!"); 
+//                System.out.println("Zeile " + (zeile + 1) + ": Platzierung Dame möglich: Gültige Teillösung gefunden!"); 
             }
         } else {
-            solved = true;
+//            solved = true;
+            System.out.println("Solution: " + ++s);
+            printChessboard(array, -1, -1);
         }
         return solved;
     }
     
     public static void main(String[] args) {
-        int n = 20;
+        int n = 11;
         
         boolean[][] array = new boolean[n][n];
         
