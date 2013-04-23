@@ -1,6 +1,6 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.HashTable;
+import kapitel_3.vl.HashTable;
 
 public class TestHashTable {
 	public static void main(String[] args) {

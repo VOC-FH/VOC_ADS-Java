@@ -1,4 +1,5 @@
 package kapitel_3.tests;
+
 public class Student {	
 	protected String name;
 	protected String surName;

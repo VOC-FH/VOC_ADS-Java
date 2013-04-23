@@ -1,8 +1,8 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.AVLTree;
-import kapitel_3.work.IComparator;
-import kapitel_3.work.PrintTree;
+import kapitel_3.vl.AVLTree;
+import kapitel_3.vl.IComparator;
+import kapitel_3.vl.PrintTree;
 
 public class TestAVLTree {
 	public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.DList;
-import kapitel_3.work.IBIterator;
+import kapitel_3.vl.DList;
+import kapitel_3.vl.IBIterator;
 
 public class TestDListIterator {
 	public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class TestDListIterator {
 			Student s = (Student) it.previous();  // Fetch the next dataset
 			System.out.println(s);  		      // Do something with the dataset
 		}
-		System.out.println("=====================");
+
 		while(it.hasNext()) {
 			Student s = (Student) it.next();  // Fetch the next dataset
 			System.out.println(s);  		  // Do something with the dataset

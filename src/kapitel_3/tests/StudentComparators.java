@@ -1,7 +1,7 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.IComparator;
-import kapitel_3.work.IKey;
+import kapitel_3.vl.IComparator;
+import kapitel_3.vl.IKey;
 
 public class StudentComparators {
 	public static class SurNameComparator implements IComparator {

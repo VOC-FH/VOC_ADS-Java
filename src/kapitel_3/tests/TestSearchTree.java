@@ -2,8 +2,8 @@ package kapitel_3.tests;
 
 import java.util.Random;
 
-import kapitel_3.work.IComparator;
-import kapitel_3.work.SearchTree;
+import kapitel_3.vl.IComparator;
+import kapitel_3.vl.SearchTree;
 
 public class TestSearchTree {
 	public static void main(String[] args) {

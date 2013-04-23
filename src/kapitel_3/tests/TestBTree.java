@@ -1,9 +1,9 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.IComparator;
-import kapitel_3.work.IFIterator;
-import kapitel_3.work.IKey;
-import kapitel_3.work.SearchTree;
+import kapitel_3.vl.IComparator;
+import kapitel_3.vl.IFIterator;
+import kapitel_3.vl.IKey;
+import kapitel_3.vl.SearchTree;
 
 public class TestBTree {
 	public static void main(String[] args) {

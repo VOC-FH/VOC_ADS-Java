@@ -1,7 +1,7 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.IComparator;
-import kapitel_3.work.IKey;
+import kapitel_3.vl.IComparator;
+import kapitel_3.vl.IKey;
 
 public class IntegerComparator implements IComparator {
 	public int compare(Object data1, Object data2) {

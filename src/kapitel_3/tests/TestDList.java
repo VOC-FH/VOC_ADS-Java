@@ -1,6 +1,6 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.DList;
+import kapitel_3.vl.DList;
 
 public class TestDList {
 	public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.IKey;
+import kapitel_3.vl.IKey;
 
 public class TestStudent {
 	public static void main(String[] args) {

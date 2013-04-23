@@ -1,6 +1,6 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.ListMap;
+import kapitel_3.vl.ListMap;
 
 public class TestMap {
     public static void main(String[] args) {
