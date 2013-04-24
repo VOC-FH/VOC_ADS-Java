@@ -1,4 +1,4 @@
-package uebung_4.ue;
+package uebung_4.tests;
 
 public class TextSearch {
 	public static boolean searchRecursive(char[] text, char[] pattern, int tPos, int count) {

@@ -1,35 +1,41 @@
 package uebung_3.ue;
 
-import kapitel_3.vl.IFIterator;
+import kapitel_3.vl.IKey;
 import kapitel_3.vl.IRIterator;
 
 public class PriorityQueue {
 	MyDList list = new MyDList();
 	
-	protected static class Priority {
+	protected static class PriorityProxy {
 		int prio;
 		Object data;
 		
-		Priority(Object data, int prio) {
+		public PriorityProxy(Object data, int prio) {
 			this.data = data;
 			this.prio = prio;
 		}
 	}
+	
+	protected static class PriorityProxyKey implements IKey {
+	    int prio;
+	    
+	    public PriorityProxyKey(int prio) {
+	        this.prio = prio;
+	    }
+	    
+        public boolean matches(Object data) {
+            return ((PriorityProxy) data).prio <= prio;
+        }
+	}
 
 	public void enqueue(Object data, int prio) {
-		IFIterator it = list.fIterator();
-		boolean inserted = false;
+		PriorityProxy prevProxy = (PriorityProxy) list.forwardSearch(new PriorityProxyKey(prio));
+		PriorityProxy newProxy = new PriorityProxy(data, prio);
 		
-		while (it.hasNext() && !inserted) {
-			Priority current = (Priority) it.next();
-			if (current.prio <= prio) {
-				Priority priority = new Priority(data, prio);
-				inserted = list.insertBefore(current, priority);
-			}
-		}
-		
-		if (!inserted) {
-			list.append(new Priority(data, prio));
+		if (prevProxy != null) {
+		    list.insertBefore(prevProxy, newProxy);
+		} else {
+			list.append(newProxy);
 		}
 	}
 	
@@ -42,6 +48,6 @@ public class PriorityQueue {
 			list.reverseRemove(data);
 		}
 		
-		return (data != null) ? ((Priority) data).data : null;
+		return (data != null) ? ((PriorityProxy) data).data : null;
 	}
 }
