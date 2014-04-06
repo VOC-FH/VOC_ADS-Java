@@ -221,7 +221,7 @@ public class PGFTree {
     }
     
     protected String treeToPGF(Tree.Node currentRoot, String tabs) {
-        String pgfTree = "[missing]\n";
+        String pgfTree = "[missing]";
         
         if (currentRoot != null) {
             PGFProxy proxy = (PGFProxy) currentRoot.data;
@@ -238,7 +238,7 @@ public class PGFTree {
                             + tabs + "    node" + (nodeFormat != "" ? " " + nodeFormat : "") + " (" + currentRoot.data + ") {" + currentRoot.data + "}\n"
                             + (childrenFormat != "" ? tabs + "    " + childrenFormat + "\n" : "");
             
-            if (!pgfLeftSubTree.equals("[missing]\n") || !pgfRightSubTree.equals("[missing]\n")) {
+            if (!pgfLeftSubTree.equals("[missing]") || !pgfRightSubTree.equals("[missing]")) {
                 pgfTree += tabs + "    child " + pgfLeftSubTree + "\n";
                 pgfTree += tabs + "    child " + pgfRightSubTree + "\n";
             } 

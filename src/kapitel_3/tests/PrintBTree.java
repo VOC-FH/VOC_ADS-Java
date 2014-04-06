@@ -5,7 +5,7 @@ import kapitel_3.work.PGFTree;
 import kapitel_3.vl.IComparator;
 import kapitel_3.vl.IKey;
 
-public class TestAVLTree {
+public class PrintBTree {
 	public static void main(String[] args) {
 		IComparator pgfComparator = PGFTree.comparator(new IntegerComparator());
 		
@@ -20,7 +20,7 @@ public class TestAVLTree {
 //			System.out.println("Inserting number " + i + ": " + i);
 			avlTree.insert(pgfTree.pgfProxy(i));
 		}
-
+		
 		IKey integerKey = new IntegerKey(6);
 		IKey key = PGFTree.key(integerKey);
 		

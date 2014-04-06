@@ -8,7 +8,7 @@ public class Array {
 		this.size = size; array = new Object[size];
 	}
 
-	public void add(int index, Object o) {
+	public void set(int index, Object o) {
 		array[index] = o;
 	}
 

@@ -59,15 +59,15 @@ public class ArrayPlotter {
             style = (specialBMonitor == i) ? "special b monitored node" : style;
             if (i == 0) {
                 if (!first) {
-                    tikzString += "\\node[" + style + ", below=of " + lastFirst + "" + (plotCount - 1) + "] (" + array[i] + "" + plotCount + ") {" + array[i] + "};\n";
+                    tikzString += "\\node[" + style + ", below=of " + lastFirst + "" + i + "" + (plotCount - 1) + "] (" + array[i] + "" + i + "" + plotCount + ") {" + array[i] + "};\n";
                 } else {
-                    tikzString += "\\node[" + style + "] (" + array[i] + "" + plotCount + ") {" + array[i] + "};\n";
+                    tikzString += "\\node[" + style + "] (" + array[i] + "" + i + "" + plotCount + ") {" + array[i] + "};\n";
                 }
                 lastFirst = array[i];
                 first = false;
             } else {
-                tikzString += "\\node[" + style + ", right=of " + array[i - 1] + "" + plotCount + "] (" + array[i] + "" + plotCount + ") {" + array[i] + "};\n";
-                tikzString += "\\draw (" + array[i - 1] + "" + plotCount + ") -- (" + array[i] + "" + plotCount + ");\n";
+                tikzString += "\\node[" + style + ", right=of " + array[i - 1] + "" + (i - 1) + "" + plotCount + "] (" + array[i] + "" + i + "" + plotCount + ") {" + array[i] + "};\n";
+                tikzString += "\\draw (" + array[i - 1] + "" + (i - 1) + "" + plotCount + ") -- (" + array[i] + "" + i + "" + plotCount + ");\n";
             }
         }
     }

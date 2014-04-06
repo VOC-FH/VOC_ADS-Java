@@ -1,32 +1,23 @@
 package kapitel_3.tests;
 
-import kapitel_3.work.AVLTree;
+import kapitel_3.work.SearchTree;
 import kapitel_3.work.PGFTree;
 import kapitel_3.vl.IComparator;
-import kapitel_3.vl.IKey;
+//import kapitel_3.vl.IKey;
 
-public class TestAVLTree {
+public class TestBSTree {
 	public static void main(String[] args) {
 		IComparator pgfComparator = PGFTree.comparator(new IntegerComparator());
 		
-		AVLTree avlTree = new AVLTree(pgfComparator);
-		PGFTree pgfTree = new PGFTree(avlTree);
+		SearchTree sTree = new SearchTree(pgfComparator);
+		PGFTree pgfTree = new PGFTree(sTree);
 
-		final int MAX = 15;
-
-//		Random rand = new Random();
-		for (int i = 0; i < MAX; i++) {
+		int[] a = {3, 4, 1, 5, 6, 2, 7};
+		for (int i = 0; i < a.length; i++) {
 //			int n = rand.nextInt(100000);
 //			System.out.println("Inserting number " + i + ": " + i);
-			avlTree.insert(pgfTree.pgfProxy(i));
+			sTree.insert(pgfTree.pgfProxy(a[i]));
 		}
-
-		IKey integerKey = new IntegerKey(6);
-		IKey key = PGFTree.key(integerKey);
-		
-		Object proxy = avlTree.binarySearch(key);
-		PGFTree.setNodeFormat(proxy, "[inserted node]");
-		PGFTree.setChildFormat(proxy, "[draw=red]");
 		
 //		System.out.println("Height: " + avlTree.height());
 //		System.out.println("IsAVLTree: " + avlTree.isAVLTree());
