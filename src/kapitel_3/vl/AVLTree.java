@@ -168,12 +168,13 @@ public class AVLTree extends SearchTree {         // An AVLTree is a SearchTree
 		}
 	}
 	
-	protected void remove(Node toRemove) { // The overwritten remove-method reports the
-		if (toRemove != null) {            // contraction of a sub-tree up to the parents
-			toRemove = replaceRoot(toRemove);
+	protected Node remove(Node toRemove) { // The overwritten remove-method reports the
+		if (toRemove != null && toRemove.isInnerNode()) { // contraction of a sub-tree
+			toRemove = replaceRoot(toRemove);             // up to the parents
 			shrunkBy((AVLNode) toRemove);
 			removeLeaf(toRemove);
 		}
+		return toRemove;
 	}
 	
 	protected static boolean isAVLTree(AVLNode node) { // Check if the tree is a valid
