@@ -47,7 +47,7 @@ public class AVLTree extends SearchTree {         // An AVLTree is a SearchTree
                 newCurrentRoot = rotateRight(currentRoot); // cases and balance the tree
                 break;                                     // according to the theory
             case +1:
-                rotateLeft(currentRoot.left);
+                rotateLeft((AVLNode) currentRoot.left);
                 newCurrentRoot = rotateRight(currentRoot);
                 break;
             }
@@ -67,7 +67,7 @@ public class AVLTree extends SearchTree {         // An AVLTree is a SearchTree
                 newCurrentRoot = rotateLeft(currentRoot);   // cases and balance the tree
                 break;                                      // according to the theory
             case -1:
-                rotateRight(currentRoot.right);
+                rotateRight((AVLNode) currentRoot.right);
                 newCurrentRoot = rotateLeft(currentRoot);
                 break;
             }
