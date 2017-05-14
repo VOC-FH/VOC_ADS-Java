@@ -4,22 +4,22 @@ import kapitel_3.vl.IKey;
 import kapitel_3.vl.IRIterator;
 
 public class PriorityQueue {
-    DList list = new DList();
+    protected uebung_3.ue.DList list = new uebung_3.ue.DList();
     
     protected static class PriorityProxy {
-        int priority;
-        Object data;
+        private int priority;
+        private Object data;
         
-        public PriorityProxy(Object data, int priority) {
+        protected PriorityProxy(Object data, int priority) {
             this.data = data;
             this.priority = priority;
         }
     }
     
     protected static class PriorityProxyKey implements IKey {
-        int prio;
+        private int prio;
         
-        public PriorityProxyKey(int prio) {
+        protected PriorityProxyKey(int prio) {
             this.prio = prio;
         }
         

@@ -47,7 +47,7 @@ public class AVLTree extends SearchTree {         // An AVLTree is a SearchTree
                 newCurrentRoot = rotateRight(currentRoot); // cases and balance the tree
                 break;                                     // according to the theory
             case +1:
-                rotateLeft(currentRoot.left);
+                rotateLeft((AVLNode) currentRoot.left);
                 newCurrentRoot = rotateRight(currentRoot);
                 break;
             }
@@ -67,7 +67,7 @@ public class AVLTree extends SearchTree {         // An AVLTree is a SearchTree
                 newCurrentRoot = rotateLeft(currentRoot);   // cases and balance the tree
                 break;                                      // according to the theory
             case -1:
-                rotateRight(currentRoot.right);
+                rotateRight((AVLNode) currentRoot.right);
                 newCurrentRoot = rotateLeft(currentRoot);
                 break;
             }
@@ -98,7 +98,6 @@ public class AVLTree extends SearchTree {         // An AVLTree is a SearchTree
             } else if (node.isRightChild()) {   // tree has grown
                 parent.balance++;
             }
-            
             if (parent.balance == -2 || parent.balance == +2) { // If the AVL-requirement
                 parent = balance(parent);       // is injured, balance the tree at the
             } else if (parent.balance != 0) {   // current node. If it's not injured, but
@@ -122,7 +121,6 @@ public class AVLTree extends SearchTree {         // An AVLTree is a SearchTree
             } else if (node.isRightChild()) {   // tree has shrunken
                 parent.balance--;
             }
-            
             if (parent.balance == -2 || parent.balance == +2) { // If the AVL-requirement
                 parent = balance(parent);       // is injured, balance the tree at the
             }                                   // current node.
@@ -133,8 +131,8 @@ public class AVLTree extends SearchTree {         // An AVLTree is a SearchTree
     }
     
     protected Node remove(Node toRemove) { // The overwritten remove-method reports the
-        if (toRemove != null && toRemove.isInnerNode()) { // contraction of a sub-tree
-            toRemove = replaceRoot(toRemove);             // up to the parents
+        if (toRemove != null) {               // contraction of a sub-tree
+            toRemove = replaceRoot(toRemove); // up to the parents
             shrunkBy((AVLNode) toRemove);
             removeLeaf(toRemove);
         }

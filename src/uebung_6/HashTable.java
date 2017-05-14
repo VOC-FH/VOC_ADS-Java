@@ -2,7 +2,6 @@ package uebung_6;
 
 import kapitel_3.vl.AVLTree;
 import kapitel_3.vl.IComparator;
-import kapitel_3.vl.IFIterator;
 import kapitel_3.vl.IKey;
 import kapitel_3.vl.IWorker;
 

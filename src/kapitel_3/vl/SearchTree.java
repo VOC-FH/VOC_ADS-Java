@@ -87,7 +87,7 @@ public class SearchTree extends BTree {
     }
 
     protected Node remove(Node toRemove) { // Remove a node
-        if (toRemove != null && toRemove.isInnerNode()) { // Is it an inner node?
+        if (toRemove != null) {               // Does the node exist?
             toRemove = replaceRoot(toRemove); // Exchanging its data set with an extreme
             removeLeaf(toRemove);		      // one of the right or left sub-tree         
         }									  // Then remove this node for real
