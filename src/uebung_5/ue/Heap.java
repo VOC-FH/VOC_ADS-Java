@@ -16,6 +16,12 @@ public abstract class Heap extends uebung_4.ue.BTree {
         this.comparator = comparator;
     }
     
+    protected static void exchangeDatasets(Node node1, Node node2) {
+        Object tmp = node1.data;
+        node1.data = node2.data;
+        node2.data = tmp;
+    }
+    
     private Node upHeap(Node node) {
         if (node.parent != null) {
             if (cs * comparator.compare(node.parent.data, node.data) == +1) {
