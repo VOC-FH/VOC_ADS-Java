@@ -1,11 +1,11 @@
-package lib;
+package exercises.exercise03;
 
 import lecture.chapter03.IFIterator;
 import lecture.chapter03.IRIterator;
 
 public class Queue {
     protected int size = 0;
-    protected exercises.exercise03.DList list = new exercises.exercise03.DList();
+    protected DList list = new DList();
     
     public void enqueue(Object data) {
         list.prepend(data);
