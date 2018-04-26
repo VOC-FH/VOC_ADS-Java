@@ -1,6 +1,6 @@
 package kapitel_3.vl;
 
-import uebung_3.ue.Queue;
+import kapitel_3.addon.Queue;
 
 public class BTree {
     protected Node root = null;	// The root of the tree
