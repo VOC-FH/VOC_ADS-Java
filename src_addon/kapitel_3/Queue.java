@@ -5,7 +5,7 @@ import kapitel_3.vl.IRIterator;
 
 public class Queue {
     protected int size = 0;
-    protected uebung_3.ue.DList list = new uebung_3.ue.DList();
+    protected kapitel_3.vl.DList list = new kapitel_3.vl.DList();
     
     public void enqueue(Object data) {
         list.prepend(data);
