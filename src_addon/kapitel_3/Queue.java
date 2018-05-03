@@ -1,4 +1,4 @@
-package kapitel_3.addon;
+package kapitel_3;
 
 import kapitel_3.vl.IFIterator;
 import kapitel_3.vl.IRIterator;
