@@ -52,7 +52,7 @@ public class DList {
         while(current != null && !key.matches(current.data)) { // Iterate for all nodes 
                                     // in the list but interrupt if the object is found.
             current = current.prev; // Not found! Jump to the previous node.
-        }							// If found return the object otherwise return null.		
+        }							// If found return the object otherwise return null.
         return current;
     }
     
