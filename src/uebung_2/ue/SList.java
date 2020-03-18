@@ -37,7 +37,6 @@ public class SList extends kapitel_3.vl.SList {
     
     public boolean insert(Object prev, Object data) {
         ReferenceKey referenceKey = new ReferenceKey(prev);
-        
         Node previousNode = search(head, referenceKey);
         
         if (previousNode != null) {
