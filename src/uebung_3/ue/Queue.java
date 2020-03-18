@@ -39,6 +39,7 @@ public class Queue {
         if (it.hasNext()) {
             Object data = it.next();
             list.forwardRemove(data);
+            size--;
         }
     }
     
