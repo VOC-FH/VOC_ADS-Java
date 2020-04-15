@@ -15,6 +15,24 @@ public class Convert {
         return s2;
     }
     
+    public static int convertFromS16toS10(char[] hex) {
+        char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+        int value = 0;
+        int weight = 1;
+        
+        for (int digitNumber = 0; digitNumber < hex.length; digitNumber++) {
+            int number = 0;
+            for (number = 0; number < hexDigits.length; number++) {
+                if (Character.toUpperCase(hex[hex.length - digitNumber - 1]) == hexDigits[number]) {
+                    break;
+                }
+            }
+            value += number * weight;
+            weight *= 16;
+        }
+        return value;
+    }
+    
     public static char[] convertWithSignFromS10toS2(short s10) {
         if (s10 < 0) {
             short abs = (short) -s10;
@@ -33,24 +51,6 @@ public class Convert {
         } else {
             return convertFromS10toS2(s10);
         }
-    }
-    
-    public static int convertFromS16toS10(char[] hex) {
-        char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-        int value = 0;
-        int weight = 1;
-        
-        for (int digitNumber = 0; digitNumber < hex.length; digitNumber++) {
-            int number = 0;
-            for (number = 0; number < hexDigits.length; number++) {
-                if (hex[hex.length - digitNumber - 1] == hexDigits[number]) {
-                    break;
-                }
-            }
-            value += number * weight;
-            weight *= 16;
-        }
-        return value;
     }
     
     public static char[] convertWithDecimalFromS10toS2(double dec) {
