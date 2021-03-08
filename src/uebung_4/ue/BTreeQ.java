@@ -40,7 +40,7 @@ public class BTreeQ extends kapitel_3.vl.BTree {
         Node node = (Node) queue.peek();
         
         if (node == null) {
-            root = node;
+            root = newNode;
         } else {
             if (node.left == null) {
                 node.left = newNode;
